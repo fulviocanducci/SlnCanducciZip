@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canducci.ZipCode", "Canducc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{FD4E2894-4EB8-4269-BA37-1D50D57356D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canducci.TestProject", "Canducci.TestProject\Canducci.TestProject.csproj", "{694A935D-D374-4B9D-B7E9-776A29938AFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canducci.TestProject", "Canducci.TestProject\Canducci.TestProject.csproj", "{694A935D-D374-4B9D-B7E9-776A29938AFB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4CF59FA2-D615-4A93-A56A-CDA43247EC72}"
 	ProjectSection(SolutionItems) = preProject
