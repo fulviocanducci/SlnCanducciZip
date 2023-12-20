@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34302.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canducci.ZipCode", "Canducci.ZipCode\Canducci.ZipCode.csproj", "{431EDA74-E87A-49D8-BE93-EA4C3AB5ECA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{FD4E2894-4EB8-4269-BA37-1D50D57356D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{431EDA74-E87A-49D8-BE93-EA4C3AB5ECA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{431EDA74-E87A-49D8-BE93-EA4C3AB5ECA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{431EDA74-E87A-49D8-BE93-EA4C3AB5ECA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{431EDA74-E87A-49D8-BE93-EA4C3AB5ECA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD4E2894-4EB8-4269-BA37-1D50D57356D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD4E2894-4EB8-4269-BA37-1D50D57356D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD4E2894-4EB8-4269-BA37-1D50D57356D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD4E2894-4EB8-4269-BA37-1D50D57356D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1804CDCE-7388-4060-A9FD-1773401A0312}
+	EndGlobalSection
+EndGlobal

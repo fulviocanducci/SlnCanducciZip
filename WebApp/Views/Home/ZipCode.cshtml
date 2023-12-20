@@ -1,0 +1,15 @@
+﻿@model Canducci.ZipCode.Zip
+
+@{
+}
+<form asp-action="ZipCode"> 
+   <input type="text" name="value" id="value" value="01001000" />
+   <button type="submit">Enviar</button>
+</form>
+
+@if (Model is not null)
+{
+   <div>@Model.City / @Model.Uf</div>
+   <div>@Model.ZipCode</div>
+   <div>@Model.Address</div>
+}
