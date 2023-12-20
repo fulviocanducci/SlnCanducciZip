@@ -2,14 +2,26 @@
 
 @{
 }
-<form asp-action="ZipCode"> 
-   <input type="text" name="value" id="value" value="01001000" />
+<form asp-action="ZipCode">
+   <input type="text" name="value" id="value" value="@(ViewBag.ZipValue ?? "")" />
    <button type="submit">Enviar</button>
 </form>
-
-@if (Model is not null)
+@if (string.IsNullOrEmpty(ViewBag.Message))
 {
-   <div>@Model.City / @Model.Uf</div>
-   <div>@Model.ZipCode</div>
-   <div>@Model.Address</div>
+   @if (Model is not null)
+   {
+      <div>@Model.ZipCode</div>
+      <div>@Model.City / @Model.Uf</div>
+      <div>@Model.Address</div>
+      <div>@Model.District</div>
+      <div>@Model.Complement</div>
+      <div>@Model.Ibge</div>
+      <div>@Model.Gia</div>
+      <div>@Model.Siafi</div>
+      <div>@Model.Ddd</div>
+   }
+}
+else
+{
+   @ViewBag.Message
 }

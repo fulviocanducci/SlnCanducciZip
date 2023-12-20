@@ -1,3 +1,4 @@
+using Canducci.ZipCode;
 using Canducci.ZipCode.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -34,13 +35,24 @@ public class HomeController : Controller
 
    public IActionResult ZipCode()
    {
+      ViewBag.ZipValue = string.Empty;
       return View();
    }
 
    [HttpPost]
    public async Task<IActionResult> ZipCode(string value)
    {
-      var result = await _requestZipCode.FindAsync(value);
+      Zip? result = null;
+      ViewBag.Message = "";
+      if (ZipCodeValue.TryParse(value, out ZipCodeValue zipCodeValue))
+      {
+         result = await _requestZipCode.FindAsync(zipCodeValue);
+      }
+      else
+      {
+         ViewBag.Message = "Valor inválido";
+      }
+      ViewBag.ZipValue = value;
       return View(result);
    }
 }
