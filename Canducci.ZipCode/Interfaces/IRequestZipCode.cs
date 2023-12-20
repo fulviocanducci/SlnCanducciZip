@@ -3,6 +3,6 @@ namespace Canducci.ZipCode.Interfaces
 {
    public interface IRequestZipCode
    {
-      Task<Zip> FindAsync(ZipCodeValue zipCodeValue);
+      Task<ZipResult> FindAsync(ZipCodeValue zipCodeValue);
    }
 }

@@ -1,4 +1,4 @@
-﻿@model Canducci.ZipCode.Zip
+﻿@model Canducci.ZipCode.ZipResult
 
 @{
 }
@@ -8,17 +8,17 @@
 </form>
 @if (string.IsNullOrEmpty(ViewBag.Message))
 {
-   @if (Model is not null)
+   @if (Model.IsValid)
    {
-      <div>@Model.ZipCode</div>
-      <div>@Model.City / @Model.Uf</div>
-      <div>@Model.Address</div>
-      <div>@Model.District</div>
-      <div>@Model.Complement</div>
-      <div>@Model.Ibge</div>
-      <div>@Model.Gia</div>
-      <div>@Model.Siafi</div>
-      <div>@Model.Ddd</div>
+      <div>@Model.Zip.ZipCode</div>
+      <div>@Model.Zip.City / @Model.Uf</div>
+      <div>@Model.Zip.Address</div>
+      <div>@Model.Zip.District</div>
+      <div>@Model.Zip.Complement</div>
+      <div>@Model.Zip.Ibge</div>
+      <div>@Model.Zip.Gia</div>
+      <div>@Model.Zip.Siafi</div>
+      <div>@Model.Zip.Ddd</div>
    }
 }
 else

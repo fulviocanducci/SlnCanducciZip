@@ -42,11 +42,11 @@ public class HomeController : Controller
    [HttpPost]
    public async Task<IActionResult> ZipCode(string value)
    {
-      Zip? result = null;
+      ZipResult? result = null;
       ViewBag.Message = "";
       if (ZipCodeValue.TryParse(value, out ZipCodeValue zipCodeValue))
       {
-         result = await _requestZipCode.FindAsync(zipCodeValue);
+         result = await _requestZipCode.FindAsync(zipCodeValue);         
       }
       else
       {

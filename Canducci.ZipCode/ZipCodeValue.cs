@@ -12,8 +12,8 @@ namespace Canducci.ZipCode
 
       public ZipCodeValue(string value)
       {
-         value = string.Join("", RegexOnlyNumber.Split(value));
-         if (!string.IsNullOrEmpty(value) || !RegexZip.IsMatch(value))
+         value = string.Join("", RegexOnlyNumber.Split(value ?? ""));
+         if (string.IsNullOrEmpty(value) || !RegexZip.IsMatch(value))
          {
             throw new Exception("Zip value is invalid");
          }
@@ -22,8 +22,8 @@ namespace Canducci.ZipCode
 
       public static bool TryParse(string value, out ZipCodeValue zipCodeValue)
       {
-         value = string.Join("", RegexOnlyNumber.Split(value));
-         if (value == null || !RegexZip.IsMatch(value))
+         value = string.Join("", RegexOnlyNumber.Split(value ?? ""));
+         if (string.IsNullOrEmpty(value) || !RegexZip.IsMatch(value))
          {
             zipCodeValue = null;
             return false;

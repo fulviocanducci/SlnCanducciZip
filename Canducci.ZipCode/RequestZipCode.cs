@@ -1,7 +1,8 @@
 ﻿using Canducci.ZipCode.Interfaces;
 using System;
+using System.IO;
 using System.Net.Http;
-using System.Net.Http.Json;
+using System.Text.Json;
 using System.Threading.Tasks;
 namespace Canducci.ZipCode
 {
@@ -15,11 +16,22 @@ namespace Canducci.ZipCode
          _httpClient.BaseAddress = new Uri("https://viacep.com.br/");
       }
 
-      public async Task<Zip> FindAsync(ZipCodeValue zipCodeValue)
+      public async Task<ZipResult> FindAsync(ZipCodeValue zipCodeValue)
       {
          try
          {
-            return await _httpClient.GetFromJsonAsync<Zip>($"ws/{zipCodeValue}/json/");
+            HttpResponseMessage httpResponseMessage = await _httpClient
+               .GetAsync($"ws/{zipCodeValue.Value}/json/");
+
+            Stream json = await httpResponseMessage
+               .Content
+               .ReadAsStreamAsync();
+
+            return new ZipResult
+               (
+                  httpResponseMessage.StatusCode,
+                  await JsonSerializer.DeserializeAsync<Zip>(json)
+               );
          }
          catch (Exception)
          {
