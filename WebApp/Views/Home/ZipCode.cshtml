@@ -1,17 +1,14 @@
 ﻿@model Canducci.ZipCode.ZipResult
-
-@{
-}
 <form asp-action="ZipCode">
    <input type="text" name="value" id="value" value="@(ViewBag.ZipValue ?? "")" />
    <button type="submit">Enviar</button>
 </form>
 @if (string.IsNullOrEmpty(ViewBag.Message))
 {
-   @if (Model.IsValid)
+   @if (Model != null && Model.IsValid && Model.StatusCode == 200)
    {
       <div>@Model.Zip.ZipCode</div>
-      <div>@Model.Zip.City / @Model.Uf</div>
+      <div>@Model.Zip.City / @Model.Zip.Uf</div>
       <div>@Model.Zip.Address</div>
       <div>@Model.Zip.District</div>
       <div>@Model.Zip.Complement</div>
